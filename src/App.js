@@ -1,13 +1,21 @@
+//React Components
 import React from "react";
+import { Switch, Route, Link } from "react-router-dom";
+
+//Custom Components
 import HomePage from "./pages/Homepage/Homepage.component";
+
+//CSS
 import "./App.css";
 
-function App() {
-  return (
-    <div className="App">
-      <HomePage />
-    </div>
-  );
+class App extends React.Component {
+  render() {
+    return (
+      <div className="App">
+        <Route exact path="/" component={HomePage} />
+      </div>
+    );
+  }
 }
 
 export default App;

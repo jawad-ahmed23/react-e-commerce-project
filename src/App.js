@@ -3,7 +3,7 @@ import React from "react";
 import { Switch, Route, Link } from "react-router-dom";
 
 //Custom Components
-import HomePage from "./pages/Homepage/Homepage.component";
+import HomePage from "./pages/Homepage/Homepage.pages";
 
 //CSS
 import "./App.css";

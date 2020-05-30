@@ -1,0 +1,19 @@
+.sign-in {
+  width: 380px;
+  display: flex;
+  flex-direction: column;
+
+  .title {
+    font-size: 23px;
+    color: #333;
+  }
+  .sub-title {
+    color: #808080;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

@@ -1,7 +1,7 @@
 import React from "react";
 import FormInput from "../../components/form-input/form-input.component";
 import CustomButton from "../custom-button/custom-buttom-component";
-import { signInWithGoogle } from "../../firebase/firebase.utils";
+import { auth, signInWithGoogle } from "../../firebase/firebase.utils";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./signin.styles.scss";
 
@@ -15,10 +15,16 @@ class SignIn extends React.Component {
     };
   }
 
-  onSubmit = (e) => {
+  handleSubmit = async (e) => {
     e.preventDefault();
+    const { email, password } = this.state;
 
-    this.setState({ email: "", password: "" });
+    try {
+      await auth.signInWithEmailAndPassword(email, password);
+      this.setState({ email: "", password: "" });
+    } catch (err) {
+      console.error(err);
+    }
   };
 
   handleChange = (e) => {
@@ -33,7 +39,7 @@ class SignIn extends React.Component {
       <div className="sign-in">
         <h2 className="title">I already have an account</h2>
         <span className="sub-title">Sign in with your email and password</span>
-        <form onSubmit={this.onSubmit}>
+        <form onSubmit={this.handleSubmit}>
           <FormInput
             type="email"
             handleChange={this.handleChange}

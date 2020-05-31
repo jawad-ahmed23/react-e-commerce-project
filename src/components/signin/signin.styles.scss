@@ -6,20 +6,20 @@
   .title {
     font-size: 23px;
     color: #333;
+    margin: 10px 0;
   }
   .sub-title {
     color: #808080;
   }
-
-  .buttons {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  .or-text {
+    text-align: center;
+    font-size: 18px;
+    margin: 10px 0;
+    text-transform: uppercase;
   }
-
   .icon-google {
     position: absolute;
     top: 11px;
-    left: 14px;
+    left: 23%;
   }
 }

@@ -1,0 +1,14 @@
+.sign-up {
+  display: flex;
+  flex-direction: column;
+  width: 380px;
+
+  .title {
+    font-size: 23px;
+    margin: 10px 0;
+    color: #333;
+  }
+  .sub-title {
+    color: #808080;
+  }
+}

@@ -21,12 +21,10 @@ class SignIn extends React.Component {
     this.setState({ email: "", password: "" });
   };
 
-  handleEmailChange = (e) => {
-    this.setState({ email: e.target.value });
-  };
+  handleChange = (e) => {
+    const { name, value } = e.target;
 
-  handlePasswordChange = (e) => {
-    this.setState({ password: e.target.value });
+    this.setState({ [name]: value });
   };
 
   render() {
@@ -38,7 +36,7 @@ class SignIn extends React.Component {
         <form onSubmit={this.onSubmit}>
           <FormInput
             type="email"
-            handleChange={this.handleEmailChange}
+            handleChange={this.handleChange}
             value={email}
             name="email"
             label="Email"
@@ -46,7 +44,7 @@ class SignIn extends React.Component {
           />
           <FormInput
             type="password"
-            handleChange={this.handlePasswordChange}
+            handleChange={this.handleChange}
             value={password}
             name="password"
             label="Password"
@@ -54,6 +52,7 @@ class SignIn extends React.Component {
           />
           <div className="buttons">
             <CustomButton type="submit">Sign in</CustomButton>
+            <p className="or-text">or</p>
             <CustomButton onClick={signInWithGoogle} isGoogleSignin>
               <FontAwesomeIcon
                 icon={["fab", "google"]}
@@ -61,7 +60,7 @@ class SignIn extends React.Component {
                 size="lg"
                 color="#fff"
               />
-              Sign in Google
+              Sign in with Google
             </CustomButton>
           </div>
         </form>

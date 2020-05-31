@@ -2,6 +2,7 @@ import React from "react";
 import FormInput from "../../components/form-input/form-input.component";
 import CustomButton from "../custom-button/custom-buttom-component";
 import { signInWithGoogle } from "../../firebase/firebase.utils";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./signin.styles.scss";
 
 class SignIn extends React.Component {
@@ -54,12 +55,11 @@ class SignIn extends React.Component {
           <div className="buttons">
             <CustomButton type="submit">Sign in</CustomButton>
             <CustomButton onClick={signInWithGoogle} isGoogleSignin>
-              <img
-                style={{ position: "absolute", top: "12px", left: "15px" }}
-                src="https://img.icons8.com/cute-clipart/64/000000/google-logo.png"
-                alt="google logo"
-                width="20px"
-                height="20px"
+              <FontAwesomeIcon
+                icon={["fab", "google"]}
+                className="icon-google"
+                size="lg"
+                color="#fff"
               />
               Sign in Google
             </CustomButton>

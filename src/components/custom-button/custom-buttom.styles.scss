@@ -15,19 +15,18 @@
   &:hover {
     background-color: #fff;
     border: 1px solid #000;
-    color: #000;
+    color: #333;
   }
 
   &.google-signin {
-    background-color: #fff;
-    color: #000;
+    background-color: #4885ed;
+    color: #fff;
     padding-left: 25px;
     width: 180px;
+    border: 1px solid #4885ed;
 
     &:hover {
-      background-color: #4885ed;
-      color: #fff;
-      border: 1px solid #4885ed;
+      background-color: #3873da;
     }
   }
 }

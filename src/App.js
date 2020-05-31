@@ -3,6 +3,13 @@ import React from "react";
 import { Switch, Route } from "react-router-dom";
 import { auth } from "./firebase/firebase.utils";
 
+//Firestore
+import { createUserProfileDocument } from "./firebase/firebase.utils";
+
+//Fron-awesome
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { fab } from "@fortawesome/free-brands-svg-icons";
+
 //Custom Components
 import HomePage from "./pages/Homepage/Homepage.page";
 import ShopPage from "./pages/shop/shop.page";
@@ -11,6 +18,8 @@ import SignInAndSignOutPage from "./pages/signin-in-and-sign-out/signin-in-and-s
 
 //CSS
 import "./App.css";
+
+library.add(fab);
 
 class App extends React.Component {
   constructor(props) {
@@ -25,9 +34,7 @@ class App extends React.Component {
 
   componentDidMount() {
     this.unsubscribeFromAuth = auth.onAuthStateChanged((user) => {
-      this.setState({ currentUser: user });
-
-      console.log(user);
+      createUserProfileDocument(user);
     });
   }
 
